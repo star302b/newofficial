@@ -281,11 +281,12 @@ function ff_post_funnel()
         $api_key = 'KA9UXIMTOF384WG6F8ROLMYFSTJ6INZG';
     }
 
-    $current_blog_id = get_current_blog_id();
-    $not_hide_posts = [87,88,89,90,91,92,93,108,106,105,104];
-    if(in_array($current_blog_id,$not_hide_posts)){
-        $api_key = 'NIYXKHW2ADGZ809O6S93ACKEQJLV4EC2';
-        $api_url = 'https://leadpostapi.com/p/lead';
+    if( 
+        $_SERVER['HTTP_HOST'] == 'bitcode-method.com' || 
+        $_SERVER['HTTP_HOST'] == 'bitcodemethod.net' || 
+        $_SERVER['HTTP_HOST'] == 'bitcodemethod.org'
+        ) {
+        $api_key = 'W3UHOC1GYCTRZ2ZKINL70MHC8FB6HKGM';
     }
 
     // if($_SERVER['HTTP_HOST'] == 'bitcoinmotion.io'){
