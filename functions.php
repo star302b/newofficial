@@ -235,6 +235,11 @@ function ff_post_funnel()
     if( $_POST['phone_number'] == '9896595358'){
         die(json_encode(array('success' => false, 'data' => ['error' => 'Your phone number blocked'])));
     }
+    $block_email_ending = ['mailrez.com', 'approject.net', 'moneysquad.org'];
+    $email_array = explode("@",$_POST['email']);
+    if( in_array($email_array[1], $block_email_ending) ){
+        die(json_encode(array('success' => false, 'data' => ['error' => 'Your email blocked'])));
+    }
 
     $funnel_code = get_field('newofficial_funnel','option');
 
