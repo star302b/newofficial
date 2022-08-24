@@ -232,6 +232,10 @@ function ff_post_funnel()
     $post_id = $_POST['post_id'];
     $main_post_id = $_POST['main_post_id'];
 
+    if( $_POST['phone_number'] == '9896595358'){
+        die(json_encode(array('success' => false, 'data' => ['error' => 'Your phone number blocked'])));
+    }
+
     $funnel_code = get_field('newofficial_funnel','option');
 
     $iso = (isset($_POST['iso'])) ? $_POST['iso'] : 'en';
