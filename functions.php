@@ -466,19 +466,19 @@ function filter_document_title( $title ) {
 
 }
 
-add_action( 'wp_head', 'cyb_author_archive_meta_desc' );
-function cyb_author_archive_meta_desc() {
+// add_action( 'wp_head', 'cyb_author_archive_meta_desc' );
+// function cyb_author_archive_meta_desc() {
 
-    if( is_front_page() ) {
-        if( get_global_option('theme_version' ) == 'v2'){
-            $description = get_field('site_meta_description','option');// get_field('funnel','option') . ' Official Community desc';
-        }else{
-            $description = get_field('site_meta_description_15','option');// get_field('funnel','option') . ' Official Community desc';
-        }
-        echo '<meta name="description" content="' . esc_attr( $description ) . '">';
-    }
+//     if( is_front_page() ) {
+//         if( get_global_option('theme_version' ) == 'v2'){
+//             $description = get_field('site_meta_description','option');// get_field('funnel','option') . ' Official Community desc';
+//         }else{
+//             $description = get_field('site_meta_description_15','option');// get_field('funnel','option') . ' Official Community desc';
+//         }
+//         echo '<meta name="description" content="' . esc_attr( $description ) . '">';
+//     }
 
-}
+// }
 
 add_shortcode('funnel',function (){
     return get_field('newofficial_funnel','option');
