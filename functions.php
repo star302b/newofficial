@@ -711,3 +711,9 @@ function trustRandomDate($end_date,$start_date )
     // Convert back to desired date format
     return date('M d, Y', $val);
 }
+
+// Remove Yoast meta description tag
+add_filter( 'wpseo_metadesc', 'remove_yoast_meta_description' );
+function remove_yoast_meta_description( $myfilter ) {
+    return false;
+}
