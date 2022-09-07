@@ -1,13 +1,13 @@
 <?php 
-if($_GET['denistest']):
-    switch_to_blog( 1 );
+// if($_GET['denistest']):
+//     switch_to_blog( 1 );
     
 
     $footer_table = get_field('footer_table','options',false);
     $footer_table_title =get_field('footer_table_title','option',false);
-    restore_current_blog();
+    // restore_current_blog();
 
-    if( count( $footer_table ) ):
+    // if( count( $footer_table ) ):
     ?>
     <style>
         .table-higlights{
@@ -634,5 +634,5 @@ if($_GET['denistest']):
         </div>
     </section>
     <?php
-    endif;
-endif;
+//     endif;
+// endif;
