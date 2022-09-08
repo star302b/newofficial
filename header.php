@@ -14,6 +14,26 @@
 
     <?php wp_head(); ?>
 
+    <?php 
+        $main_country_code = isset($_SERVER['GEOIP2_COUNTRY_CODE']) ? $_SERVER['GEOIP2_COUNTRY_CODE'] : 'za';
+        if( function_exists('wp_remote_get')){
+            $ippppp = isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'];
+            $responseipinfo = wp_remote_get('https://ipinfo.io/'.$ippppp.'?token=cfcd9237902f60');
+    
+            if ( is_wp_error( $responseipinfo ) ){
+                $main_country_code = isset($_SERVER['GEOIP2_COUNTRY_CODE']) ? $_SERVER['GEOIP2_COUNTRY_CODE'] : 'za';
+            }
+            elseif( wp_remote_retrieve_response_code( $responseipinfo ) === 200 ){
+                $body = wp_remote_retrieve_body( $responseipinfo );
+                $bodyipinfo = json_decode($body);
+                $main_country_code = $bodyipinfo->country;
+            }
+    
+        }
+        ?>
+
+    <meta name="isoCode" content="<?php echo $main_country_code; ?>">
+
     <?php if ( get_global_option('global_ga_id') ): ?>
     <!-- Global site tag (gtag.js) - Google Analytics --> 
     <script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo get_global_option('global_ga_id'); ?>"></script> 
@@ -25,6 +45,53 @@
     gtag('config', '<?php echo get_global_option('global_ga_id'); ?>'); 
     </script>
     <?php endif; ?>
+
+    <meta property="og:type" content="website" />
+	<meta property="og:title" content="<?php echo do_shortcode( get_field('global_home_page_title','options') )?>" /> 
+	<meta property="og:description" content="<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>" /> 
+	<meta property="og:url" content="<?php echo home_url( ); ?>" /> 
+	<meta property="og:site_name" content="" />
+	<meta property="og:image" content="<?php echo get_global_option('newofficial_logo')?>" />
+	<meta property="og:image:alt" content="<?php echo get_global_option('newofficial_funnel')?>" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="<?php echo home_url( ); ?>"/>
+    <meta name="twitter:description" content="<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>" />
+    <meta name="twitter:title" content="<?php echo do_shortcode( get_field('global_home_page_title','options') )?>" /> 
+    <meta name="twitter:image" content="<?php echo get_global_option('newofficial_logo')?>" />
+    <meta name="twitter:image:alt" content="<?php echo get_global_option('newofficial_funnel')?>"/>
+
+    <script type="application/ld+json">
+        {
+            "@type":"WebSite",
+            "URL": "<?php echo home_url( ); ?>",
+            "headline": "<?php echo do_shortcode( get_field('global_home_page_title','options') )?>", 
+            "name": "<?php echo get_global_option('newofficial_funnel')?>",
+            "image":"<?php echo get_global_option('newofficial_logo')?>",
+            "description":"<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>",
+            "@context":"http://schema.org"
+        }
+</script>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org/", 
+"@type": "Product", 
+"name": "<?php echo get_global_option('newofficial_funnel')?>",
+"image": "<?php echo get_global_option('newofficial_logo')?>",
+"description": "<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>", 
+"brand": "<?php echo get_global_option('newofficial_funnel')?>",
+"offers": {
+"@type": "Offer",
+"URL": "<?php echo home_url( ); ?>",
+"priceCurrency": "EUR",
+"price": "250",
+"priceValidUntil": "<?php echo date("Y-m-t"); ?>",
+"availability": "https://schema.org/OnlineOnly",
+"itemCondition": "https://schema.org/NewCondition"
+}
+}
+</script>
 
 </head>
 <body>

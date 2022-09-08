@@ -43,6 +43,26 @@
             "maxlength": ""
         },
         {
+            "key": "field_6200fa6046423",
+            "label": "Home Page Description",
+            "name": "global_home_page_desc_main",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_62010bc19a200",
             "label": "Theme Variant",
             "name": "theme_variant",

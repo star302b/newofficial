@@ -36,6 +36,9 @@ function my_acf_button_ajax($field, $post_id){
 
    $main_request_language = $_POST['lang'];
 
+    $global_home_page_title = get_field('global_home_page_title','option');
+    $global_home_page_desc_main = get_field('global_home_page_desc_main','option');
+
     $banner_title = get_field('banner_title','option');
     $banner_description = get_field('banner_description','option');
     $banner_form_heading = get_field('banner_form_heading','option');
@@ -76,6 +79,8 @@ function my_acf_button_ajax($field, $post_id){
                         return $new_language;
                     }, 100);
 
+                        update_field('global_home_page_title', translate_specific_field($global_home_page_title, $new_language), 'option');
+                        update_field('global_home_page_desc_main', translate_specific_field($global_home_page_desc_main, $new_language), 'option');
                     // if(!get_field('banner_title','option') || get_field('banner_title','option') == ''){
                         update_field('banner_title', translate_specific_field($banner_title, $new_language), 'option');
                         update_field('banner_description', translate_specific_field($banner_description, $new_language), 'option');
@@ -128,6 +133,9 @@ function my_acf_button_ajax($field, $post_id){
                 return $new_language;
             }, 100);
 
+            update_field('global_home_page_title', translate_specific_field($global_home_page_title, $new_language), 'option');
+                        update_field('global_home_page_desc_main', translate_specific_field($global_home_page_desc_main, $new_language), 'option');
+                   
             // if(!get_field('banner_title','option') || get_field('banner_title','option') == ''){
                 update_field('banner_title', translate_specific_field($banner_title, $new_language), 'option');
                 update_field('banner_description', translate_specific_field($banner_description, $new_language), 'option');
