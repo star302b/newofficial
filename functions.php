@@ -420,7 +420,7 @@ function get_page_url($template_name)
     return get_bloginfo('url');
 }
 
-add_filter( 'wpseo_title', 'filter_document_title' );
+// add_filter( 'wpseo_title', 'filter_document_title' );
 function filter_document_title( $title ) {
     
 
@@ -712,4 +712,9 @@ function trustRandomDate($end_date,$start_date )
 add_filter( 'wpseo_metadesc', 'remove_yoast_meta_description' );
 function remove_yoast_meta_description( $myfilter ) {
     return false;
+}
+
+add_filter('pre_get_document_title', 'change_the_title');
+function change_the_title() {
+    return do_shortcode( get_field('global_home_page_title','option') );
 }
