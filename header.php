@@ -14,25 +14,8 @@
 
     <?php wp_head(); ?>
 
-    <?php 
-        $main_country_code = isset($_SERVER['GEOIP2_COUNTRY_CODE']) ? $_SERVER['GEOIP2_COUNTRY_CODE'] : 'za';
-        if( function_exists('wp_remote_get')){
-            $ippppp = isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'];
-            $responseipinfo = wp_remote_get('https://ipinfo.io/'.$ippppp.'?token=cfcd9237902f60');
-    
-            if ( is_wp_error( $responseipinfo ) ){
-                $main_country_code = isset($_SERVER['GEOIP2_COUNTRY_CODE']) ? $_SERVER['GEOIP2_COUNTRY_CODE'] : 'za';
-            }
-            elseif( wp_remote_retrieve_response_code( $responseipinfo ) === 200 ){
-                $body = wp_remote_retrieve_body( $responseipinfo );
-                $bodyipinfo = json_decode($body);
-                $main_country_code = $bodyipinfo->country;
-            }
-    
-        }
-        ?>
 
-    <meta name="isoCode" content="<?php echo $main_country_code; ?>">
+    <meta name="isoCode" content="<?php echo $_SERVER['HTTP_CF_CONNECTING_IP']; ?>">
 
     <?php if ( get_global_option('global_ga_id') ): ?>
     <!-- Global site tag (gtag.js) - Google Analytics --> 
