@@ -33,7 +33,7 @@
 	<meta property="og:title" content="<?php echo do_shortcode( get_field('global_home_page_title','options') )?>" /> 
 	<meta property="og:description" content="<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>" /> 
 	<meta property="og:url" content="<?php echo home_url( ); ?>" /> 
-	<meta property="og:site_name" content="" />
+	<meta property="og:site_name" content="<?php echo get_global_option('newofficial_funnel')?>" />
 	<meta property="og:image" content="<?php echo get_global_option('newofficial_logo')?>" />
 	<meta property="og:image:alt" content="<?php echo get_global_option('newofficial_funnel')?>" />
 
