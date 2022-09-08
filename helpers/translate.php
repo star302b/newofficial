@@ -189,6 +189,59 @@ function my_acf_button_ajax($field, $post_id){
     wp_send_json_success("Success!");
 }
 
+add_action('acfe/fields/button/name=global_translate_meta', 'my_acf_button_ajax_global_translate_meta', 10, 2);
+function my_acf_button_ajax_global_translate_meta($field, $post_id){
+    global $sitepress;
+    remove_all_shortcodes();
+
+    add_filter('acf/settings/current_language', function () {
+        return 'en';
+    }, 100);
+
+   $main_request_language = $_POST['lang'];
+
+    $global_home_page_title = get_field('global_home_page_title','option');
+    $global_home_page_desc_main = get_field('global_home_page_desc_main','option');
+
+    
+
+    try {
+       if( $main_request_language == 'en'){
+            $languages = icl_get_languages();
+
+
+            foreach ($languages as $l_item) {
+                if ($l_item["tag"] != "en") {
+                    $new_language = $l_item["tag"];
+                    add_filter('acf/settings/current_language', function () use ($new_language) {
+                        return $new_language;
+                    }, 100);
+
+                        update_field('global_home_page_title', translate_specific_field($global_home_page_title, $new_language), 'option');
+                        update_field('global_home_page_desc_main', translate_specific_field($global_home_page_desc_main, $new_language), 'option');
+                    
+                    // }
+                }
+            }
+        }else{
+            $new_language = $main_request_language;
+            add_filter('acf/settings/current_language', function () use ($new_language) {
+                return $new_language;
+            }, 100);
+
+            update_field('global_home_page_title', translate_specific_field($global_home_page_title, $new_language), 'option');
+            update_field('global_home_page_desc_main', translate_specific_field($global_home_page_desc_main, $new_language), 'option');
+            
+            // }
+        }
+    }catch (Exception $error){
+        wp_send_json_error($error);
+    }
+
+    // send json success message
+    wp_send_json_success("Success!");
+}
+
 function my_acf_input_admin_footer() {
 
     ?>
@@ -199,6 +252,14 @@ function my_acf_input_admin_footer() {
         });
 
         acf.addAction('acfe/fields/button/complete/name=global_translate', function(response, $el, data){
+            $el.find('button').html('Translated');
+        });
+
+        acf.addAction('acfe/fields/button/before/name=global_translate_meta', function($el, data){
+            $el.find('button').html('<i class="fa fa-spinner fa-spin"></i> Translating').attr('disabled', true);
+        });
+
+        acf.addAction('acfe/fields/button/complete/name=global_translate_meta', function(response, $el, data){
             $el.find('button').html('Translated');
         });
     </script>

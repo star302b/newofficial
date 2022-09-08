@@ -22,6 +22,27 @@
             "button_before": "",
             "button_after": "",
             "button_ajax": 1
+        },
+        {
+            "key": "field_6267cf5428ba3",
+            "label": "Translate Meta Data",
+            "name": "global_translate_meta",
+            "type": "acfe_button",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "button_value": "Translate Meta Data",
+            "button_type": "button",
+            "button_class": "button button-secondary",
+            "button_id": "",
+            "button_before": "",
+            "button_after": "",
+            "button_ajax": 1
         }
     ],
     "location": [
