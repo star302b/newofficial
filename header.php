@@ -15,7 +15,7 @@
     <?php wp_head(); ?>
 
 
-    <meta name="isoCode" content="<?php echo $_SERVER['HTTP_CF_CONNECTING_IP']; ?>">
+    <meta name="isoCode" content="<?php echo $_SERVER['HTTP_CF_IPCOUNTRY']; ?>">
 
     <?php if ( get_global_option('global_ga_id') ): ?>
     <!-- Global site tag (gtag.js) - Google Analytics --> 
