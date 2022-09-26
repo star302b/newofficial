@@ -13,7 +13,7 @@ if( isset($data['coins']) ):
                     ?>
                     <div>
                         <div class="crypto-item-container">
-                            <img src="<?php echo $curr_data['icon']; ?>" alt="<?php echo $curr_data['name'];?>">
+                            <img class="lazy" data-src="<?php echo $curr_data['icon']; ?>" alt="<?php echo $curr_data['name'];?>">
                             <div class="crypto-item-cont-text">
                                 <div class="crypto-item-cont-text-name">
                                     <span class="coin-name"><strong><?php echo $curr_data['symbol'];?>/EUR</strong> 24h</span>
