@@ -79,6 +79,11 @@
 
 </head>
 <body>
+    <style>
+        .js--tickers-section{
+            max-height:50px;
+        }
+    </style>
 <?php if( get_global_option('global_show_top_line') ): ?>
 <style>
 .lock-line{
@@ -102,9 +107,7 @@
 .lock-line .align-center p{
     margin: 7px 0;
 }
-.js--tickers-section{
-    max-height:50px;
-}
+
 </style>
 <div class="lock-line">
     <div class="container">
