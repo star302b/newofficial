@@ -102,6 +102,9 @@
 .lock-line .align-center p{
     margin: 7px 0;
 }
+.js--tickers-section{
+    max-height:50px;
+}
 </style>
 <div class="lock-line">
     <div class="container">
