@@ -139,7 +139,7 @@
                 ?>
                 <div class="language">
                 <span>
-                    <img src="<?php echo IMAGE_URL; ?>img/flags/<?php echo ICL_LANGUAGE_CODE;?>.png" alt=""> <?php echo ICL_LANGUAGE_CODE == 'pt-pt' ? 'PT' : strtoupper(ICL_LANGUAGE_CODE); ?> <i class="iti__arrow"></i>
+                    <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/<?php echo ICL_LANGUAGE_CODE;?>.png" alt=""> <?php echo ICL_LANGUAGE_CODE == 'pt-pt' ? 'PT' : strtoupper(ICL_LANGUAGE_CODE); ?> <i class="iti__arrow"></i>
                 </span>
                     <ul class="language-list">
                         <?php

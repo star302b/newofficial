@@ -4,7 +4,7 @@ $features_description = get_field('features_description','option');
 
 $features_features = get_field('features_features','option'); // title / description
 ?>
-<section class="content-section dark-section section-overlay" style="background-image: url(<?php echo IMAGE_URL; ?>img/content/pexels-antoni-shkraba-5816296.jpg);" data-name="Features" data-description="Variant 3 (icon - 'fa-check-square')">
+<section class="content-section dark-section section-overlay" style="background-image: url(<?php echo IMAGE_URL; ?>imgm/content/pexels-antoni-shkraba-5816296.jpeg);" data-name="Features" data-description="Variant 3 (icon - 'fa-check-square')">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">

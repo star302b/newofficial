@@ -8,7 +8,7 @@ $step_2_description = get_field('step_2_description','option');
 $step_3_title = get_field('step_3_title','option');
 $step_3_description = get_field('step_3_description','option');
 ?>
-<section class="content-section steps-section steps-section--variant-2 dark-section section-overlay" style="background-image: url(<?php echo IMAGE_URL; ?>img/content/pexels-olya-kobruseva-8919570.jpg);" data-name="Steps" data-description="Variant 2">
+<section class="content-section steps-section steps-section--variant-2 dark-section section-overlay" style="background-image: url(<?php echo IMAGE_URL; ?>imgm/content/pexels-olya-kobruseva-8919570.jpeg);" data-name="Steps" data-description="Variant 2">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">

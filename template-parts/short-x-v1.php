@@ -18,7 +18,7 @@ $short_x_description = get_field('short_x_description','option');
                 </div>
             </div>
             <div class="col col-md-50">
-                <img src="<?php echo IMAGE_URL; ?>img/content/pexels-alesia-kozik-6777570.jpg" alt="Start Growing Your Financial Portfolio Today">
+                <img src="<?php echo IMAGE_URL; ?>imgm/content/pexels-alesia-kozik-6777570.jpeg" alt="Start Growing Your Financial Portfolio Today">
             </div>
         </div>
     </div>
