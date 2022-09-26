@@ -80,6 +80,7 @@
 </head>
 <body>
     <style>
+        .el-fixed .ticker-section,
         .js--tickers-section{
             max-height:50px;
         }
