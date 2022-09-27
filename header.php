@@ -10,6 +10,7 @@
 
 
     <!--Fonts Control-->
+    
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <?php wp_head(); ?>
@@ -78,6 +79,12 @@
 
 </head>
 <body>
+    <style>
+        .el-fixed .ticker-section,
+        .js--tickers-section{
+            max-height:50px;
+        }
+    </style>
 <?php if( get_global_option('global_show_top_line') ): ?>
 <style>
 .lock-line{
@@ -101,6 +108,7 @@
 .lock-line .align-center p{
     margin: 7px 0;
 }
+
 </style>
 <div class="lock-line">
     <div class="container">

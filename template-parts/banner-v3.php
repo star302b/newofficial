@@ -4,7 +4,7 @@ $description = get_field('banner_description','option');
 $banner_form_heading = get_field('banner_form_heading','option');
 ?>
 
-<section class="hero-banner" style="background-image: url(<?php if( get_field('background_image1','option')): echo get_field('background_image1','option'); else: ?><?php echo IMAGE_URL; ?>imgm/hero/hero-bg-3.jpg<?php endif; ?>)"  data-name="Hero Banner" data-description="With Video, Form-Right">
+<section class="lazy hero-banner" data-bg="<?php if( get_field('background_image1','option')): echo get_field('background_image1','option'); else: ?><?php echo IMAGE_URL; ?>imgm/hero/hero-bg-3.jpg<?php endif; ?>"  data-name="Hero Banner" data-description="With Video, Form-Right">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">
@@ -19,7 +19,7 @@ $banner_form_heading = get_field('banner_form_heading','option');
                 </div>
                 <div class="col col-md-60">
                     <div class="frame-wrapper">
-                        <iframe src="https://player.vimeo.com/video/319904948" frameborder="0"></iframe>
+                        <iframe class="lazy" data-src="https://player.vimeo.com/video/319904948" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>

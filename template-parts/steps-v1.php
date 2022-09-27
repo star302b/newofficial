@@ -9,7 +9,7 @@ $step_3_title = get_field('step_3_title','option');
 $step_3_description = get_field('step_3_description','option');
 ?>
 
-<section class="content-section steps-section steps-section--variant-1 dark-section section-overlay section-overlay--variant-2" style="background-image: url(<?php echo IMAGE_URL; ?>imgm/content/pexels-lukas-590016.jpeg);" data-name="Steps" data-description="Variant 1">
+<section class="lazy content-section steps-section steps-section--variant-1 dark-section section-overlay section-overlay--variant-2" data-bg="<?php echo IMAGE_URL; ?>imgm/content/pexels-lukas-590016.jpeg" data-name="Steps" data-description="Variant 1">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">

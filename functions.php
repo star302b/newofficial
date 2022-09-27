@@ -293,7 +293,8 @@ function ff_post_funnel()
     if( 
         $_SERVER['HTTP_HOST'] == 'bitcode-method.com' || 
         $_SERVER['HTTP_HOST'] == 'bitcodemethod.net' || 
-        $_SERVER['HTTP_HOST'] == 'bitcodemethod.org'
+        $_SERVER['HTTP_HOST'] == 'bitcodemethod.org' ||
+        $_SERVER['HTTP_HOST'] == 'bitcodemethod.com'
         ) {
         $api_key = 'W3UHOC1GYCTRZ2ZKINL70MHC8FB6HKGM';
     }

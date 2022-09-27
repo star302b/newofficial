@@ -130,5 +130,16 @@
 <!--Scripts-->
 
 <?php wp_footer(); ?>
+<script>
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    // Your custom settings go here
+  };
+</script>
+<script
+  async
+  src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"
+></script>
 </body>
 </html>
