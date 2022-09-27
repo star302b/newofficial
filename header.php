@@ -11,7 +11,7 @@
 
     <!--Fonts Control-->
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"  media="print" onload="this.media='all'"/>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"  media="print" onload="this.media='all'"/> -->
 
     <?php wp_head(); ?>
 
