@@ -4,7 +4,7 @@ $description = get_field('banner_description','option');
 $banner_form_heading = get_field('banner_form_heading','option');
 ?>
 
-<section class="lazy hero-banner" data-bg="<?php if( get_field('background_image1','option')): echo get_field('background_image1','option'); else: ?><?php echo IMAGE_URL; ?>imgm/hero/hero-bg-2.jpg<?php endif; ?>"  data-name="Hero Banner" data-description="With Image, Form-Right">
+<section class="lazy hero-banner" data-bg="<?php if( get_field('background_image1','option')): echo get_field('background_image1','option'); else: ?><?php echo IMAGE_URL; ?>imgm/hero/hero-bg-2.jpeg<?php endif; ?>"  data-name="Hero Banner" data-description="With Image, Form-Right">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">
@@ -18,7 +18,7 @@ $banner_form_heading = get_field('banner_form_heading','option');
                     <?php get_template_part('./template-parts/form'); ?>
                 </div>
                 <div class="col col-md-60">
-                    <img width="500" height="500" src="<?php echo IMAGE_URL; ?>img/hero/hero-img-1.jpg" alt="Bitcoin Motion">
+                    <img width="500" height="500" src="<?php echo IMAGE_URL; ?>imgm/hero/hero-img-1.jpeg" alt="Bitcoin Motion">
                 </div>
             </div>
         </div>
