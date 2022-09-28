@@ -25,10 +25,10 @@
     <section class="content-section light-section" data-name="Article" data-description="Without image, Long Content">
         <div class="container">
             <div class="fow flex-align-center">
-                <div class="text-center typo-wrapper">
-                    <h2><b><?php echo do_shortcode( $footer_table_title ); ?></b></h2>
-                </div>
                 <table class="table-higlights">
+                    <caption>
+                        <h2 class="typo-wrapper"><b><?php echo do_shortcode( $footer_table_title ); ?></b></h2>
+                    </caption>
                     <tbody id="emojtable">
                         <?php foreach( $footer_table as $footer_table_item ): the_row(); ?>
                         <?php 
