@@ -3,7 +3,7 @@ $faq_title = get_field('faq_title','option');
 $faq_description = get_field('faq_description','option');
 ?>
 
-<section class="section content-section light-section" data-name="FAQ">
+<section class="section content-section light-section" data-name="FAQ" itemscope itemtype="https://schema.org/FAQPage">
     <div class="container">
         <div class="section-header">
             <h2><?php echo do_shortcode($faq_title); ?></h2>
@@ -14,10 +14,12 @@ $faq_description = get_field('faq_description','option');
         <div class="row flex-row flex-wrap">
             <?php foreach ( get_field('faq_q_and_a','option') as $faq): ?>
                 <div class="col col-md-50">
-                        <div class="acc-item">
-                            <div class="acc-header js--acc-header"><?php echo do_shortcode($faq['question']); ?></div>
-                            <div class="acc-content">
-                                <div>
+                        <div class="acc-item" itemscope itemprop="mainEntity"
+                             itemtype="https://schema.org/Question">
+                            <div class="acc-header js--acc-header" itemprop="name"><?php echo do_shortcode($faq['question']); ?></div>
+                            <div class="acc-content" itemscope itemprop="acceptedAnswer"
+                                 itemtype="https://schema.org/Answer">
+                                <div itemprop="text">
                                     <?php echo do_shortcode($faq['answer']); ?>
                                 </div>
                             </div>
