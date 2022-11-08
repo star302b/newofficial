@@ -290,14 +290,14 @@ function ff_post_funnel()
         $api_key = 'KA9UXIMTOF384WG6F8ROLMYFSTJ6INZG';
     }
 
-    if( 
-        $_SERVER['HTTP_HOST'] == 'bitcode-method.com' || 
-        $_SERVER['HTTP_HOST'] == 'bitcodemethod.net' || 
-        $_SERVER['HTTP_HOST'] == 'bitcodemethod.org' ||
-        $_SERVER['HTTP_HOST'] == 'bitcodemethod.com'
-        ) {
-        $api_key = 'W3UHOC1GYCTRZ2ZKINL70MHC8FB6HKGM';
-    }
+    // if( 
+    //     $_SERVER['HTTP_HOST'] == 'bitcode-method.com' || 
+    //     $_SERVER['HTTP_HOST'] == 'bitcodemethod.net' || 
+    //     $_SERVER['HTTP_HOST'] == 'bitcodemethod.org' ||
+    //     $_SERVER['HTTP_HOST'] == 'bitcodemethod.com'
+    //     ) {
+    //     $api_key = 'W3UHOC1GYCTRZ2ZKINL70MHC8FB6HKGM';
+    // }
 
     // if($_SERVER['HTTP_HOST'] == 'bitcoinmotion.io'){
     //     $api_key = 'JKP0P7PTJ7YJMW6X372HPGRJZTIUVOES';
