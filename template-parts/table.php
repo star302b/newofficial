@@ -30,7 +30,9 @@
                         <h2 class="typo-wrapper"><b><?php echo do_shortcode( $footer_table_title ); ?></b></h2>
                     </caption>
                     <tbody id="emojtable">
-                        <?php foreach( $footer_table as $footer_table_item ): the_row(); ?>
+                        <?php
+                        if( is_array( $footer_table ) ):
+                        foreach( $footer_table as $footer_table_item ): the_row(); ?>
                         <?php 
                         $varints = $footer_table_item['field_62dfaac22b2ac'];
                         ?>
@@ -38,7 +40,9 @@
                             <td><?php echo do_shortcode( $footer_table_item['field_62dfaabc2b2ab'] ); ?></td>
                             <td><?php echo do_shortcode( $varints[array_rand( $varints )]['field_62dfaacc2b2ad'] ); ?></td>
                         </tr>
-                        <?php endforeach; ?>
+                        <?php endforeach;
+                        endif;
+                        ?>
     <?php if( ICL_LANGUAGE_CODE == 'en'): ?>
                         <tr>
         <td>🌍 Countries</td>

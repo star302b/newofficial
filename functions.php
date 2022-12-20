@@ -23,10 +23,24 @@ define( 'IMAGE_URL' , get_template_directory_uri() . '/assets/' );
 
 function trust_scripts() {
 
-    wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null);
-
+    $theme_version = get_field('theme_variant','option');
+    if( $theme_version == 'v5' ) {
+        wp_enqueue_style('main-style', get_template_directory_uri() . '/themes/dark-green/assets/css/style.min.css', array(), null);
+    } elseif ( $theme_version == 'v6' ) {
+        wp_enqueue_style('main-style', get_template_directory_uri() . '/themes/purple-blue/assets/css/style.min.css', array(), null);
+    } else {
+        wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null);
+    }
     wp_enqueue_style('funnel-form-tel', get_template_directory_uri() . '/assets/css/tel.css', array(), null);
-    wp_enqueue_script( 'main-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true );
+
+    if( $theme_version == 'v5' ) {
+        wp_enqueue_script('main-scripts', get_template_directory_uri() . '/themes/dark-green/assets/js/main.min.js', array(), null, true);
+    } elseif ( $theme_version == 'v6' ) {
+        wp_enqueue_script('main-scripts', get_template_directory_uri() . '/themes/purple-blue/assets/js/main.min.js', array(), null, true);
+    } else {
+        wp_enqueue_script('main-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true);
+    }
+
     wp_enqueue_script('jquery') ;
     wp_enqueue_script( 'funnel-form', get_template_directory_uri() . '/assets/js/funnel-form.js', array(), null, true );
     wp_localize_script( 'funnel-form', 'my_var_prefix', get_language_strings() );

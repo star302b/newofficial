@@ -44,7 +44,7 @@ $testimonials_description = get_field('testimonials_description','option');
                             </div>
                             <div class="content">
                                 <div class="heading">
-                                    <h5><?php the_field('author',$review_id); ?></h5>
+                                        <h5><?php the_field('author',$review_id); ?></h5>
                                 </div>
                                 <?php 
                             $testimonials_date = date('M d, Y',get_field('author_joined',$review_id));

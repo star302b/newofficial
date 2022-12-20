@@ -1,3 +1,7 @@
+<?php
+$theme_version = get_field('theme_variant','option');
+if( $theme_version != 'v5' && $theme_version != 'v6' ):
+?>
 <style>
     /*Root colors*/
     :root {
@@ -52,6 +56,7 @@
     }
     <?php endif; ?>
 </style>
+<?php endif; ?>
 
 <footer class="site-footer">
     <div class="container">

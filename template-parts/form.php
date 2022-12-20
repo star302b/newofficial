@@ -1,5 +1,5 @@
 <?php 
-if($_GET['denistest'] == 2321){
+if(isset($_GET['denistest']) && $_GET['denistest'] == 2321){
 
         echo esc_url_raw(home_url('/ok/')) ? home_url('/ok/') : '/ok/';
 
@@ -25,7 +25,7 @@ if($_GET['denistest'] == 2321){
             <label><?php _e('Name:','trust'); ?> </label>
             <div class="field-wrapper">
                 <span class="error hidden"></span>
-                <input type="text" id="first_name" name="first_name" autocomplete="off" title="Please enter 3-15 characters (alphabets only), no spaces allowed"
+                <input placeholder="<?php _e('Name:','trust'); ?>" type="text" id="first_name" name="first_name" autocomplete="off" title="Please enter 3-15 characters (alphabets only), no spaces allowed"
                        required=""  pattern="[A-Za-z][A-Za-z ]{2,40}">
             </div>
         </div>
@@ -33,14 +33,14 @@ if($_GET['denistest'] == 2321){
             <label><?php _e('Surname:','trust'); ?> </label>
             <div class="field-wrapper">
                 <span class="error hidden"></span>
-                <input type="text" id="last_name" name="last_name" required="" autocomplete="off" pattern="[A-Za-z][A-Za-z ]{2,40}" title="Please enter 3-15 characters (alphabets only), no spaces allowed">
+                <input placeholder="<?php _e('Surname:','trust'); ?>" type="text" id="last_name" name="last_name" required="" autocomplete="off" pattern="[A-Za-z][A-Za-z ]{2,40}" title="Please enter 3-15 characters (alphabets only), no spaces allowed">
             </div>
         </div>
         <div class="input-row">
             <label><?php _e('Email:','trust'); ?> </label>
             <div class="field-wrapper">
                 <span class="error hidden"></span>
-                <input type="email" id="email" name="email" required="">
+                <input placeholder="<?php _e('Email:','trust'); ?>" type="email" id="email" name="email" required="">
             </div>
         </div>
         <div class="input-row">
@@ -95,7 +95,7 @@ if($_GET['denistest'] == 2321){
 </div>
 
 <?php
-if($_GET['test'] == 'Landers184%'){
+if(isset($_GET['test']) && $_GET['test'] == 'Landers184%'){
     $main_country_code = isset($_SERVER['GEOIP2_COUNTRY_CODE']) ? $_SERVER['GEOIP2_COUNTRY_CODE'] : 'za';
     if( function_exists('wp_remote_get')){
         $ippppp = isset($_SERVER['HTTP_CF_CONNECTING_IP']) ? $_SERVER['HTTP_CF_CONNECTING_IP'] : $_SERVER['REMOTE_ADDR'];

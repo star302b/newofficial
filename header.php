@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link rel="canonical" href="<?php echo home_url(); ?>" />
 
 
     <!--Fonts Control-->
     
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
     <?php wp_head(); ?>
 
 
-    <meta name="isoCode" content="<?php echo $_SERVER['HTTP_CF_IPCOUNTRY']; ?>">
+    <meta name="isoCode" content="<?php echo @$_SERVER['HTTP_CF_IPCOUNTRY']; ?>">
 
     <?php if ( get_global_option('global_ga_id') ): ?>
     <!-- Global site tag (gtag.js) - Google Analytics --> 
@@ -79,12 +78,24 @@
 
 </head>
 <body>
+<?php
+$theme_version = get_field('theme_variant','option');
+if( $theme_version != 'v5' && $theme_version != 'v6' ):
+?>
     <style>
         .el-fixed .ticker-section,
         .js--tickers-section{
             max-height:50px;
         }
     </style>
+<?php else: ?>
+    <style>
+        .el-fixed .ticker-section,
+        .js--tickers-section{
+            max-height:72px;
+        }
+    </style>
+<?php endif; ?>
 <?php if( get_global_option('global_show_top_line') ): ?>
 <style>
 .lock-line{

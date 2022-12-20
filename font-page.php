@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+$theme_version = get_field('theme_variant','option');
+
+if( $theme_version == 'v5' ) {
+    include 'themes/dark-green/index.php';
+    exit();
+} elseif ( $theme_version == 'v6' ) {
+    include 'themes/purple-blue/index.php';
+    exit();
+}
+
+get_header(); ?>
 
 <?php
 $blocks_ordering = array(
@@ -48,7 +59,6 @@ $blocks_ordering = array(
     )
 );
 
-$theme_version = get_field('theme_variant','option');
 ?>
 <main class="site-wrapper">
     <?php get_template_part('template-parts/tickers'); ?>

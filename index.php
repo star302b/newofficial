@@ -1,6 +1,14 @@
-<?php get_header(); ?>
+<?php
+$theme_version = get_field('theme_variant','option');
+
+get_header(); ?>
 
 <?php
+if( $theme_version == 'v5' ) {
+    include 'themes/dark-green/index.php';
+} elseif ( $theme_version == 'v6' ) {
+    include 'themes/purple-blue/index.php';
+} else {
 $blocks_ordering = array(
         'v1' => array(
             'banner-v1',
@@ -48,7 +56,7 @@ $blocks_ordering = array(
         )
 );
 
-$theme_version = get_field('theme_variant','option');
+
 ?>
 <main class="site-wrapper">
 <?php get_template_part('template-parts/tickers'); ?>
@@ -57,4 +65,6 @@ $theme_version = get_field('theme_variant','option');
 <?php endforeach; ?>
 <?php get_template_part('template-parts/table'); ?>
 </main>
-<?php get_footer(); ?>
+<?php
+}
+get_footer(); ?>
