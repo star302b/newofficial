@@ -23,7 +23,7 @@ $features_features = get_field('features_features','option'); // title / descrip
                                 }
                                 ?>
                                 <li>
-                                    <i class="fas fa-balance-scale-left"></i>
+                                    ⚖️
                                     <?php echo do_shortcode($single_feature['description'])?>
                                 </li>
                             <?php endforeach; ?>
@@ -39,7 +39,7 @@ $features_features = get_field('features_features','option'); // title / descrip
                                 }
                                 ?>
                                 <li>
-                                    <i class="fas fa-balance-scale-left"></i>
+                                    ⚖️
                                     <?php echo do_shortcode($single_feature['description'])?>
                                 </li>
                             <?php endforeach; ?>

@@ -24,7 +24,7 @@ $features_features = get_field('features_features','option'); // title / descrip
                                 }
                                 ?>
                             <li>
-                                <i class="fas fa-bookmark"></i>
+                                🔖
                                 <?php echo do_shortcode($single_feature['description'])?>
                             </li>
                             <?php endforeach; ?>
@@ -40,7 +40,7 @@ $features_features = get_field('features_features','option'); // title / descrip
                                 }
                                 ?>
                                 <li>
-                                    <i class="fas fa-bookmark"></i>
+                                    🔖
                                     <?php echo do_shortcode($single_feature['description'])?>
                                 </li>
                             <?php endforeach; ?>
