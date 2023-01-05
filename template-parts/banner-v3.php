@@ -19,7 +19,7 @@ $banner_form_heading = get_field('banner_form_heading','option');
                 </div>
                 <div class="col col-md-60">
                     <div class="frame-wrapper">
-                        <iframe class="lazy" data-src="https://player.vimeo.com/video/319904948" frameborder="0"></iframe>
+                        <iframe class="lazy" loading="lazy" data-src="https://player.vimeo.com/video/319904948" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
