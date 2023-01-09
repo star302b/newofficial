@@ -1346,13 +1346,15 @@ jQuery(function($){
 		iti = window.intlTelInput(phone_input1,{
 		  initialCountry: "auto",
 		  excludeCountries: ["US","us"],
-		//   geoIpLookup: function(callback) {
-		//     $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
-		//       var countryCode = (resp && resp.country) ? resp.country : "";
-		//       callback(countryCode);
-		// 	  $('#country').val(countryCode);
-		//     });
-		//   },
+		  geoIpLookup: function(callback) {
+			callback(window.global_contry_code);
+			$('#country').val(window.global_contry_code);
+		    // $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
+		    //   var countryCode = (resp && resp.country) ? resp.country : "";
+		    //   callback(countryCode);
+			//   $('#country').val(countryCode);
+		    // });
+		  },
 		});
 
 		extension = iti.getSelectedCountryData();
@@ -1375,13 +1377,15 @@ jQuery(function($){
 		iti2 = window.intlTelInput(phone_input,{
 			initialCountry: "auto",
 			excludeCountries: ["US","us"],
-			// geoIpLookup: function(callback) {
-			// 	$.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
-			// 		var countryCode = (resp && resp.country) ? resp.country : "";
-			// 		callback(countryCode);
-			// 		$('#country').val(countryCode);
-			// 	});
-			// },
+			geoIpLookup: function(callback) {
+				callback(window.global_contry_code);
+			$('#country').val(window.global_contry_code);
+				// $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
+				// 	var countryCode = (resp && resp.country) ? resp.country : "";
+				// 	callback(countryCode);
+				// 	$('#country').val(countryCode);
+				// });
+			},
 		});
 
 		extension = iti2.getSelectedCountryData();
