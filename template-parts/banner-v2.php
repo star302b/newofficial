@@ -18,7 +18,7 @@ $banner_form_heading = get_field('banner_form_heading','option');
                     <?php get_template_part('./template-parts/form'); ?>
                 </div>
                 <div class="col col-md-60">
-                    <img width="500" height="500" src="<?php echo IMAGE_URL; ?>imgm/hero/hero-img-1.jpeg" alt="<?php echo get_global_option('newofficial_funnel')?>">
+                    <img width="500" height="500" class="lazy" data-src="<?php echo IMAGE_URL; ?>imgm/hero/hero-img-1.jpeg" alt="<?php echo get_global_option('newofficial_funnel')?>">
                 </div>
             </div>
         </div>

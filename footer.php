@@ -124,7 +124,7 @@ if( $theme_version != 'v5' && $theme_version != 'v6' ):
         </div>
 
         <div class="sign-area">
-        <img class="modal-logo" src="<?php echo get_global_option('newofficial_logo')?>" alt="">
+        <img class="modal-logo lazy" data-src="<?php echo get_global_option('newofficial_logo')?>" alt="<?php echo get_global_option('newofficial_funnel')?>">
         <div class="form-title">
         <p><?php echo do_shortcode(get_field('banner_form_heading','option'))?></p>
     </div>

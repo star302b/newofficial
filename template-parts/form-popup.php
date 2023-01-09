@@ -59,8 +59,8 @@
         
     </div>
     <div class="modal-safe flex-xs-row flex-align-center flex-justify-between">
-    <img src="<?php echo get_template_directory_uri() . '/assets/img/bitgo.png'; ?>">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/norton.png'; ?>">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/mcafee.png'; ?>">
-            </div>
+        <img class="lazy" data-src="<?php echo get_template_directory_uri() . '/assets/img/bitgo.png'; ?>" alt="Bitgo">
+        <img class="lazy" data-src="<?php echo get_template_directory_uri() . '/assets/img/norton.png'; ?>" alt="Norton">
+        <img class="lazy" data-src="<?php echo get_template_directory_uri() . '/assets/img/mcafee.png'; ?>" alt="Mcafee">
+    </div>
 </div>

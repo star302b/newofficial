@@ -63,14 +63,14 @@ $blocks_ordering = array(
 <main class="site-wrapper">
     <?php //get_template_part('template-parts/tickers'); ?>
     <?php 
-if (!$site_all_content = get_transient('site_all_content_2_' . $theme_version . '_' . ICL_LANGUAGE_CODE)):
+if (!$site_all_content = get_transient('site_all_content_3_' . $theme_version . '_' . ICL_LANGUAGE_CODE)):
     ob_start();
 foreach ( $blocks_ordering[$theme_version] as $section): ?>
     <?php get_template_part('template-parts/' . $section); ?>
 <?php endforeach; ?>
 <?php get_template_part('template-parts/table'); 
 $site_all_content = ob_get_clean();
-set_transient( 'site_all_content_2_' . $theme_version . '_' . ICL_LANGUAGE_CODE, $site_all_content, 60 * 60 * 60 );
+set_transient( 'site_all_content_3_' . $theme_version . '_' . ICL_LANGUAGE_CODE, $site_all_content, 60 * 60 * 60 );
 endif;
 echo $site_all_content;
 ?>

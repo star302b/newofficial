@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <link rel="canonical" href="<?php echo home_url(); ?>" />
@@ -157,7 +157,7 @@ if( $theme_version != 'v5' && $theme_version != 'v6' ):
                 ?>
                 <div class="language">
                 <span>
-                    <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/<?php echo ICL_LANGUAGE_CODE;?>.png" alt=""> <?php echo ICL_LANGUAGE_CODE == 'pt-pt' ? 'PT' : strtoupper(ICL_LANGUAGE_CODE); ?> <i class="iti__arrow"></i>
+                    <img src="/wp-content/plugins/sitepress-multilingual-cms/res/flags/<?php echo ICL_LANGUAGE_CODE;?>.png" alt="<?php echo ICL_LANGUAGE_CODE;?>"> <?php echo ICL_LANGUAGE_CODE == 'pt-pt' ? 'PT' : strtoupper(ICL_LANGUAGE_CODE); ?> <i class="iti__arrow"></i>
                 </span>
                     <ul class="language-list">
                         <?php
