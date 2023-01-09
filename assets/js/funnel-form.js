@@ -1351,8 +1351,10 @@ jQuery(function($){
 			// $('#country').val(window.global_contry_code);
 		    $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
 		      var countryCode = (resp && resp.country) ? resp.country : "";
+			  if( countryCode != 'us' ){
 		      callback(countryCode);
 			  $('#country').val(countryCode);
+			  }
 		    });
 		  },
 		});
@@ -1378,8 +1380,10 @@ jQuery(function($){
 			initialCountry: "auto",
 			excludeCountries: ["US","us"],
 			geoIpLookup: function(callback) {
+				if( $('#country').val() !='us'){
 				callback($('#country').val());
 			$('#country').val($('#country').val());
+				}
 				// $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
 				// 	var countryCode = (resp && resp.country) ? resp.country : "";
 				// 	callback(countryCode);
