@@ -1344,19 +1344,19 @@ jQuery(function($){
 		// here, the index maps to the error code returned from getValidationError - see readme
 		var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 		iti = window.intlTelInput(phone_input1,{
-		  initialCountry: "auto",
+		  initialCountry: $('[name="main_country_code_site"]').val(),
 		  excludeCountries: ["US","us"],
-		  geoIpLookup: function(callback) {
-			// callback(window.global_contry_code);
-			// $('#country').val(window.global_contry_code);
-		    $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
-		      var countryCode = (resp && resp.country) ? resp.country : "";
-			  if( countryCode != 'us' ){
-		      callback(countryCode);
-			  $('#country').val(countryCode);
-			  }
-		    });
-		  },
+		//   geoIpLookup: function(callback) {
+		// 	// callback(window.global_contry_code);
+		// 	// $('#country').val(window.global_contry_code);
+		//     $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
+		//       var countryCode = (resp && resp.country) ? resp.country : "";
+		// 	  if( countryCode != 'US' ){
+		//       callback(countryCode);
+		// 	  $('#country').val(countryCode);
+		// 	  }
+		//     });
+		//   },
 		});
 
 		extension = iti.getSelectedCountryData();
@@ -1377,19 +1377,19 @@ jQuery(function($){
 		// here, the index maps to the error code returned from getValidationError - see readme
 		var errorMap = ["Invalid number", "Invalid country code", "Too short", "Too long", "Invalid number"];
 		iti2 = window.intlTelInput(phone_input,{
-			initialCountry: "auto",
+			initialCountry: $('[name="main_country_code_site"]').val(),
 			excludeCountries: ["US","us"],
-			geoIpLookup: function(callback) {
-				if( $('#country').val() !='us'){
-				callback($('#country').val());
-			$('#country').val($('#country').val());
-				}
-				// $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
-				// 	var countryCode = (resp && resp.country) ? resp.country : "";
-				// 	callback(countryCode);
-				// 	$('#country').val(countryCode);
-				// });
-			},
+			// geoIpLookup: function(callback) {
+			// 	if( $('#country').val() !='US'){
+			// 	callback($('#country').val());
+			// $('#country').val($('#country').val());
+			// 	}
+			// 	// $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
+			// 	// 	var countryCode = (resp && resp.country) ? resp.country : "";
+			// 	// 	callback(countryCode);
+			// 	// 	$('#country').val(countryCode);
+			// 	// });
+			// },
 		});
 
 		extension = iti2.getSelectedCountryData();

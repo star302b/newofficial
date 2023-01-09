@@ -75,6 +75,8 @@ if(isset($_GET['denistest']) && $_GET['denistest'] == 2321){
     
         }
         ?>
+        <input type="hidden" id="main_country_code_site" name="main_country_code_site"
+               value="<?php echo strtolower( $main_country_code ); ?>"/>
         <input type="hidden" id="country"
                value="<?php echo $main_country_code; ?>"/>
         <input type="hidden" id="ip_address"
