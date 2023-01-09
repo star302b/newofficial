@@ -21,6 +21,11 @@ add_action( 'wp_enqueue_scripts', 'trust_scripts' );
 
 define( 'IMAGE_URL' , get_template_directory_uri() . '/assets/' );
 
+function enqueue_theme_css(){
+    wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null);
+}
+add_action('get_footer','enqueue_theme_css');
+
 function trust_scripts() {
 
     $theme_version = get_field('theme_variant','option');
@@ -29,7 +34,7 @@ function trust_scripts() {
     } elseif ( $theme_version == 'v6' ) {
         wp_enqueue_style('main-style', get_template_directory_uri() . '/themes/purple-blue/assets/css/style.min.css', array(), null);
     } else {
-        wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null);
+        // wp_enqueue_style('main-style', get_template_directory_uri() . '/assets/css/style.min.css', array(), null);
     }
     wp_enqueue_style('funnel-form-tel', get_template_directory_uri() . '/assets/css/tel.css', array(), null);
 
