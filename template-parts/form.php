@@ -75,9 +75,6 @@ if(isset($_GET['denistest']) && $_GET['denistest'] == 2321){
     
         }
         ?>
-        <script>
-            window.global_contry_code = "<?php echo $main_country_code; ?>";
-        </script>
         <input type="hidden" id="country"
                value="<?php echo $main_country_code; ?>"/>
         <input type="hidden" id="ip_address"

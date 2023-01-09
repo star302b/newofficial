@@ -1347,13 +1347,13 @@ jQuery(function($){
 		  initialCountry: "auto",
 		  excludeCountries: ["US","us"],
 		  geoIpLookup: function(callback) {
-			callback(window.global_contry_code);
-			$('#country').val(window.global_contry_code);
-		    // $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
-		    //   var countryCode = (resp && resp.country) ? resp.country : "";
-		    //   callback(countryCode);
-			//   $('#country').val(countryCode);
-		    // });
+			// callback(window.global_contry_code);
+			// $('#country').val(window.global_contry_code);
+		    $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
+		      var countryCode = (resp && resp.country) ? resp.country : "";
+		      callback(countryCode);
+			  $('#country').val(countryCode);
+		    });
 		  },
 		});
 
@@ -1378,8 +1378,8 @@ jQuery(function($){
 			initialCountry: "auto",
 			excludeCountries: ["US","us"],
 			geoIpLookup: function(callback) {
-				callback(window.global_contry_code);
-			$('#country').val(window.global_contry_code);
+				callback($('#country').val());
+			$('#country').val($('#country').val());
 				// $.get('https://ipinfo.io?token=1ad6ebd4198644', function() {}, "jsonp").always(function(resp) {
 				// 	var countryCode = (resp && resp.country) ? resp.country : "";
 				// 	callback(countryCode);
