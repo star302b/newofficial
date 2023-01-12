@@ -48,7 +48,7 @@ $testimonials_description = get_field('testimonials_description','option');
                                 <h5><?php the_field('author',$review_id); ?></h5>
                             </div>
                             <?php 
-                            $testimonials_date = date('M d, Y',get_field('author_joined',$review_id));
+                            $testimonials_date = date('M d, 2022',get_field('author_joined',$review_id));
                             $not_hide_posts = [87,88,89,90,91,92,93];
                             if(in_array($main_blog_id,$not_hide_posts)){
                                 $testimonials_date = trustRandomDate("1/01/2022",date('d/M/Y'));

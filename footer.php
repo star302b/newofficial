@@ -70,7 +70,7 @@ if( $theme_version != 'v5' && $theme_version != 'v6' ):
             foreach ($languages as $l) : ?>
                 <li>
                     <a href="<?php echo $l['url'] ?>" title="<?php echo $l['translated_name']; ?>" >
-                        <img class="lazy-loaded" src="<?php echo $l['country_flag_url'] ; ?>" height="20"
+                        <img class="lazy" data-src="<?php echo $l['country_flag_url'] ; ?>" height="20"
                              alt="<?php echo $l['translated_name']; ?>">
                     </a>
                 </li>
