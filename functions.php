@@ -220,7 +220,15 @@ endif;
 
 function language_redirect()
 {
-    if(!is_front_page()) {
+    if( $_SERVER['REQUEST_URI'] == '/sitemap.xml' ) {
+
+        include ( get_template_directory() . '/sitemap.php');
+        die();
+    }
+    else if( strpos($_SERVER['REQUEST_URI'],'wp-sitemap.xml') ){
+        die();
+    }
+    else if(!is_front_page()) {
         global $post;
 
         if (get_post_meta($post->ID, '_wp_page_template ', true) == "page-thanks.php") {
