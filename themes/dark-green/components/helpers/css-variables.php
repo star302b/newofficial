@@ -29,11 +29,8 @@
 <!--Fonts Control-->
 <div id="fontRoot">
     <style>
-        /*@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");*/
         @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css');
         
-
         body {
             font-family: 'Roboto', sans-serif;
             font-size: 18px;
@@ -58,7 +55,37 @@
         }
 
         .acc-header:after{
-            font-family: "Font Awesome\ 5 Free" !important;
+           content: '';
+        }
+
+        .acc-header:before{
+            content: '';
+            border: 2px solid;
+            border-color: transparent transparent var(--text-color-light) var(--text-color-light);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 1em;
+            margin: auto;
+            width: 0.3em;
+            height: 0.3em;
+            z-index: 2;
+            transform: translate(-11px, -2px) rotate(-45deg);
+            transition: .3s;
+        }
+
+        .acc-header.open:before{
+            transform: translate(-11px, 2px) rotate(-225deg);
+        }
+      
+        .steps-section--variant-1 .step-item .fas svg{
+            max-heigh: 50%;
+            max-width: 50%;
+            object-fit: contain;
+        }
+
+        .steps-section--variant-1 .step-item .fas svg path{
+            fill: var(--text-color-light)
         }
 
         .section-form{
