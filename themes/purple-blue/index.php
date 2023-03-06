@@ -35,16 +35,16 @@
 <div class="live-deposit hide" id="deposit-message-block">
     <p id="deposit-message">
         <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="324234">
-        Just 1 minute ago a user sold NOIA with 2.1% profit on KuCoin.
+        Just 1 minute ago a user sold Bitcoin with 2.1% profit on <?php echo get_global_option('newofficial_funnel')?>.
     </p>
 
     <script>
         const text = document.getElementById('deposit-message')
         const block = document.getElementById('deposit-message-block')
         const arr = [
-          'Just 1 minute ago a user sold Pussy with 2.1% profit on KuCoin.',
-          'Just 3 minute ago a user sold Elly with 4.3% profit on Coinbase.',
-          'Just 2 minute ago a user sold Gangster with 4% profit on Coinbase.',
+          'Just 1 minute ago a user sold Bitcoin with 2.1% profit on <?php echo get_global_option('newofficial_funnel')?>.',
+          'Just 3 minute ago a user sold Ethereum with 4.3% profit on <?php echo get_global_option('newofficial_funnel')?>.',
+          'Just 2 minute ago a user sold XRP with 4% profit on <?php echo get_global_option('newofficial_funnel')?>.',
         ]
         function getRndInteger(min, max) {
           return Math.floor(Math.random() * (max - min) ) + min;
