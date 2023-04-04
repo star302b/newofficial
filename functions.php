@@ -265,7 +265,19 @@ function ff_post_funnel()
     }
     $block_email_ending = ['mailrez.com', 'approject.net', 'moneysquad.org'];
     $email_array = explode("@",$_POST['email']);
-    if( in_array($email_array[1], $block_email_ending) ){
+
+    $emaillistverify_key = "iaWNSHS7srHSEBLvaxsyO";
+    $url = "https://apps.emaillistverify.com/api/verifyEmail?secret=" . $emaillistverify_key . "&email=" . $_POST['email'];
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true );
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+
+    if( in_array($email_array[1], $block_email_ending) || $response != 'ok'  ){
         die(json_encode(array('success' => false, 'data' => ['error' => 'Your email blocked'])));
     }
 
