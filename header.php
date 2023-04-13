@@ -1,5 +1,5 @@
 <!doctype html>
-<html <?php language_attributes(); ?>>
+<html <?php if ( get_bloginfo( 'language' ) == 'de-DE' ) { echo 'lang="de"'; } else { language_attributes(); } ?>>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -55,6 +55,18 @@
             "name": "<?php echo get_global_option('newofficial_funnel')?>",
             "image":"<?php echo get_global_option('newofficial_logo')?>",
             "description":"<?php echo do_shortcode( get_field('global_home_page_desc_main','options') )?>",
+            "author": {
+                "@type": "Person",
+                "name": "<?php echo get_global_option('newofficial_funnel')?>"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "<?php echo get_global_option('newofficial_logo')?>"
+                },
+                "name": "<?php echo get_global_option('newofficial_funnel')?>"
+            },
             "@context":"http://schema.org"
         }
 </script>
