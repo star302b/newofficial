@@ -21,7 +21,7 @@ $step_3_description = get_field('step_3_description','option');
                 <div class="col col-md-30">
                     <div class="step-item">
                         <div class="step-title">
-                            🪪
+                            <i class="fas fa-id-card"></i>
                             <?php echo do_shortcode($step_1_title); ?>
                         </div>
                         <div class="step-body">
@@ -32,7 +32,7 @@ $step_3_description = get_field('step_3_description','option');
                 <div class="col col-md-30">
                     <div class="step-item">
                         <div class="step-title">
-                            👛
+                            <i class="fas fa-wallet"></i>
                             <?php echo do_shortcode($step_2_title); ?>
                         </div>
                         <div class="step-body">
@@ -43,7 +43,7 @@ $step_3_description = get_field('step_3_description','option');
                 <div class="col col-md-30">
                     <div class="step-item">
                         <div class="step-title">
-                            📈
+                            <i class="fas fa-pray"></i>
                             <?php echo do_shortcode($step_3_title); ?>
                         </div>
                         <div class="step-body">
