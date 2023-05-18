@@ -5,7 +5,7 @@ $features_description = get_field('features_description','option');
 $features_features = get_field('features_features','option'); // title / description
 ?>
 
-<section class="lazy content-section dark-section section-overlay" data-bg="<?php echo IMAGE_URL; ?>imgm/content/pexels-lukas-590016.jpeg" data-name="Features" data-description="Variant 1 (icon - 'fa-bookmark')">
+<section class="lazy content-section dark-section section-overlay" data-bg="<?php if( get_field('disable_background_image6','option') == false || empty( get_field('disable_background_image6','option') ) ): echo IMAGE_URL; ?>imgm/content/pexels-lukas-590016.jpeg<?php endif; ?>" data-name="Features" data-description="Variant 1 (icon - 'fa-bookmark')">
     <div class="relative z-2">
         <div class="container">
             <div class="section-header">
