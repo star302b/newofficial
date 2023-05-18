@@ -18,7 +18,7 @@ $short_x_description = get_field('short_x_description','option');
                 </div>
             </div>
             <div class="col col-md-50">
-                <img class="lazy" data-src="<?php echo IMAGE_URL; ?>imgm/content/pexels-alesia-kozik-6777570.jpeg" alt="Start Growing Your Financial Portfolio Today">
+                <img class="lazy" data-src="<?php if( empty( get_field('background_image4','option') ) ): echo IMAGE_URL; ?>imgm/content/pexels-alesia-kozik-6777570.jpeg<?php else: echo get_field('background_image4','option'); endif; ?>" alt="Start Growing Your Financial Portfolio Today">
             </div>
         </div>
     </div>

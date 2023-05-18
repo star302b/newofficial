@@ -745,7 +745,7 @@
         },
         {
             "key": "field_62012652db145",
-            "label": "Background Image",
+            "label": "Image",
             "name": "background_image2",
             "aria-label": "",
             "type": "image",
@@ -957,7 +957,7 @@
         },
         {
             "key": "field_62012652db167",
-            "label": "Background Image",
+            "label": "Image",
             "name": "background_image4",
             "aria-label": "",
             "type": "image",
